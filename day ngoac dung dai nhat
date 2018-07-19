@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+string s;
+void kt(){
+	stack<char> st;
+	int dem=0;
+	for(int i=0;i<s.length();){
+		if(st.empty()&&s[i]==')') i++;
+	 	if(s[i]=='('){
+			st.push(s[i]);
+			i++;
+		}
+		if(s[i]==')'&&!st.empty()){
+			dem++;
+			st.pop();
+			i++;
+		}
+	}
+	cout<<dem;
+}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		cin>>s;
+		kt();
+		cout<<endl;
+	}
+}
