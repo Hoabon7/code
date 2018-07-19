@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+string s;
+int thutu(char x){
+	if(x=='^') return 3;
+	else if(x=='*'||x=='/') return 2;
+	else if(x=='+'||x=='-') return 1;
+	else if(x=='(') return 0;
+}
+void hauto(){
+	stack<char> st;
+	for(int i=0;i<s.length();i++){
+		if(isalpha(s[i])) cout<<s[i];
+		else{
+			if(s[i]=='(') st.push(s[i]);
+			else{
+				if(s[i]==')'){
+					while(st.top()!='('){
+						cout<<st.top();
+						st.pop();
+					}
+					st.pop();
+				}
+				else{
+					while(!st.empty()&&thutu(s[i])<=thutu(st.top())){
+						cout<<st.top();
+						st.pop();
+					}st.push(s[i]);
+				}
+				
+			}
+		}
+	}
+	while(!st.empty()) {
+		cout<<st.top(); 
+		st.pop();
+	}
+}
+int main(){
+	cin>>s;
+	hauto();
+	return 0;
+}
