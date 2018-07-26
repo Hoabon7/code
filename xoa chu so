@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long n,k;
+string s;
+long long a[100000];
+void tachso(){
+	stack<int> st;
+	for(int i=0;i<s.length();i++){
+		a[i]=int(s[i]-'0');
+		if(st.empty()){
+			st.push(a[i]);
+		}
+		else{
+			while(k>0&&!st.empty()&&a[i]>st.top()){
+				st.pop();
+				k--;
+			}
+			st.push(a[i]);
+		}
+	}
+	while(k>0&&!st.empty()){
+		st.pop();
+		k--;
+	}
+	int i=0;
+	while(!st.empty()){
+		a[i]=st.top();//<<" ";
+		st.pop();
+		i++;
+	}
+	for(int j=i-1;j>=0;j--){
+		cout<<a[j];
+	}
+}
+
+int main(){
+	cin>>n>>k;
+	cin>>s;
+	tachso();
+	return 0;
+	
+}
