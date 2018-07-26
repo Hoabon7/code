@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long so[1000];
+int n;
+long long tinh(){
+	so[0]=9;
+	int d=0,c=0,mu=1,cs=0;
+	while(so[cs]%n!=0){//neu so[o] khong chia het cho n
+		if(d==c){
+			so[++cs]=9*pow(10,mu++);//++cs co nghia la luon luon cong them 1;
+			d=cs;c=0;
+		}
+		else{
+			so[++cs]=so[d]+so[c++];
+		}
+	}
+	return so[cs];
+}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		cin>>n;
+		cout<<tinh()<<endl;
+	}
+}
