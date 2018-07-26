@@ -7,7 +7,7 @@ void tachso(){
 	stack<int> st;
 	for(int i=0;i<s.length();i++){
 		a[i]=int(s[i]-'0');
-		if(st.empty()){
+		if(st.empty()){//neu stack rong;
 			st.push(a[i]);
 		}
 		else{
@@ -18,7 +18,7 @@ void tachso(){
 			st.push(a[i]);
 		}
 	}
-	while(k>0&&!st.empty()){
+	while(k>0&&!st.empty()){//la truong  hop cua cac so bang nhau;
 		st.pop();
 		k--;
 	}
