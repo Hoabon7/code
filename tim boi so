@@ -11,7 +11,7 @@ long long tinh(){
 			d=cs;c=0;
 		}
 		else{
-			so[++cs]=so[d]+so[c++];
+			so[++cs]=so[d]+so[c++];//++cs co nghia la luon cong them 1;con cs++ la sau moi vong lap thi moi cong them 1;do la dieu khac
 		}
 	}
 	return so[cs];
