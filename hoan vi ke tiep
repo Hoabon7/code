@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+string s;
+int a[1000],stop=0;
+int sinh(){
+	int n=s.length()-1;
+	int i=n-1;
+	while(i>=0&&a[i]>=a[i+1]) i--;
+	if(i<0) {
+		stop=1;
+		return 2;
+	}
+	else{
+		int k=n;
+		while(a[i]>a[k]) k--;
+		swap(a[i],a[k]);
+		int r=i+1,z=n;
+		while(r<z){
+			swap(a[r],a[z]);
+			r++;z--;
+		}
+	}
+}
+void tach(){
+	for(int i=0;i<s.length();i++){
+		a[i]=int(s[i]-'0');
+	}
+}
+void in(){
+	for(int  i=0;i<s.length();i++){
+		cout<<a[i];
+	}
+		cout<<endl;
+}
+int main(){
+		int t;
+		cin>>t;
+		while(t--){
+			cin>>s;
+			tach();
+			if(sinh()==2){
+				cout<<"biggest"<<endl;
+			}else{
+				in();
+			}
+		}
+	return 0;
+}
