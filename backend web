@@ -1,0 +1,13 @@
+VD như mình, một Java Web Developer
+
+Trước tiên phải làm quen với Java: Java Basic -> Java OOP -> Java IO -> Java Application + Database
+Tiếp theo mới vào Webapp
+
+Web Framework: JavaEE, Spring, Struts, Play
+ORM Framework: Hibernate
+Build tool: Maven
+Package Management: Maven
+Unit Testing: JUnit
+Database Server: SQL Server, MySQL, PostgreSQL
+Web Server: Tomcat, có thể sử dụng thêm Jetty để xài cho Heroku hoặc deploy app theo cách portable
+Cloud Service: Heroku
